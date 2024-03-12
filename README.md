@@ -6,5 +6,5 @@
 
 ### Run
 ```shell
-cargo run -p template gen user -p ./demo
+cargo run -p template -- gen user -p ./demo
 ```
