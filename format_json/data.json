@@ -1,0 +1,104 @@
+{
+  "success": true,
+  "city": "徐 州 市",
+  "data": [
+    {
+      "date": "2024-03-12",
+      "week": "星期二",
+      "type": "晴",
+      "low": "7°C",
+      "high": "16°C",
+      "fengxiang": "东风",
+      "fengli": "3-4级",
+      "night": {
+        "type": "阴",
+        "fengxiang": "南风",
+        "fengli": "1-3级"
+      }
+    },
+    {
+      "date": "2024-03-13",
+      "week": "星期三",
+      "type": "阴",
+      "low": "8°C",
+      "high": "14°C",
+      "fengxiang": "南风",
+      "fengli": "1-3级",
+      "night": {
+        "type": "小雨",
+        "fengxiang": "东南风",
+        "fengli": "1-3级"
+      }
+    },
+    {
+      "date": "2024-03-14",
+      "week": "星期四",
+      "type": "晴",
+      "low": "6°C",
+      "high": "18°C",
+      "fengxiang": "东南风",
+      "fengli": "1-3级",
+      "night": {
+        "type": "晴",
+        "fengxiang": "东南风",
+        "fengli": "1-3级"
+      }
+    },
+    {
+      "date": "2024-03-15",
+      "week": "星期五",
+      "type": "多云",
+      "low": "8°C",
+      "high": "19°C",
+      "fengxiang": "东南风",
+      "fengli": "1-3级",
+      "night": {
+        "type": "阴",
+        "fengxiang": "东风",
+        "fengli": "1-3级"
+      }
+    },
+    {
+      "date": "2024-03-16",
+      "week": "星期六",
+      "type": "多云",
+      "low": "12°C",
+      "high": "20°C",
+      "fengxiang": "东南风",
+      "fengli": "1-3级",
+      "night": {
+        "type": "阴阳",
+        "fengxiang": "北风",
+        "fengli": "1-3级"
+      }
+    },
+    {
+      "date": "2024-03-17",
+      "week": "星期日",
+      "type": "阴",
+      "low": "11°C",
+      "high": "19°C",
+      "fengxiang": "北风",
+      "fengli": "1-3级",
+      "night": {
+        "type": "阴",
+        "fengxiang": "东南风",
+        "fengli": "1-3级"
+      }
+    },
+    {
+      "date": "2024-03-18",
+      "week": "星期一",
+      "type": "阴",
+      "low": "9°C",
+      "high": "16°C",
+      "fengxiang": "西南风",
+      "fengli": "1-3级",
+      "night": {
+        "type": "晴",
+        "fengxiang": "西南风",
+        "fengli": "1-3级"
+      }
+    }
+  ]
+}
