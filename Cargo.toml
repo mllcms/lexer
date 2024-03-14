@@ -1,3 +1,3 @@
 [workspace]
 resolver = "2"
-members = [ "format_json","template"]
+members = [ "arithmetic", "format_json","template"]

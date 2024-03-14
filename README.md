@@ -16,3 +16,12 @@ cargo run -p template -- gen user -p ./demo
 ```shell
 cargo run -p format_json
 ```
+
+## arithmetic
+计算数学表达式
+
+### Run
+```shell
+cargo test -p arithmetic
+cargo run -p arithmetic
+```
