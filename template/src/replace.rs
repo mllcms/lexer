@@ -1,5 +1,6 @@
-use derive_more::Deref;
 use std::collections::HashMap;
+
+use derive_more::Deref;
 
 #[derive(Debug, Default, Deref)]
 pub struct Replace(pub HashMap<String, String>);
@@ -46,7 +47,9 @@ impl Replace {
 
         let mut chars = to.chars();
         if is_ascii_uppercase {
-            chars.next().map(|c| source.push(c.to_ascii_uppercase()));
+            if let Some(c) = chars.next() {
+                source.push(c.to_ascii_uppercase())
+            }
         }
         source.extend(chars)
     }

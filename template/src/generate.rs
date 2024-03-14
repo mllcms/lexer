@@ -58,7 +58,7 @@ fn generate(input: PathBuf, output: PathBuf, reps: &Replace) -> anyhow::Result<(
         let out_name = reps.replace(name.to_string_lossy());
 
         if meta.is_file() {
-            if let Err(err) = fs::read_to_string(&path).and_then(|mut data| {
+            if let Err(err) = fs::read_to_string(path).and_then(|mut data| {
                 data = reps.replace(data);
                 fs::write(output.join(&out_name), data)
             }) {
