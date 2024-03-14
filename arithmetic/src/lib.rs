@@ -1,4 +1,4 @@
-const EXPRESSION_ERROR: &str = "表达式有误";
+const EXPRESSION_ERROR: &str = "表达式错误";
 
 #[derive(Debug, Clone, PartialEq)]
 pub enum Symbol {
@@ -21,7 +21,7 @@ impl Symbol {
             '%' => Ok(Self::Per),
             '(' => Ok(Self::ParL),
             ')' => Ok(Self::ParR),
-            _ => Err(format!("不支持运算 {symbol} 符号")),
+            _ => Err(format!("未知符号 {symbol}")),
         }
     }
 
@@ -38,7 +38,7 @@ impl Symbol {
             Symbol::Sub => number.push(a - b),
             Symbol::Mul => number.push(a * b),
             Symbol::Div if b != 0.0 => number.push(a / b),
-            Symbol::Div => return Err("除数不能为 0"),
+            Symbol::Div => return Err("不能除以 0"),
             _ => return Err(EXPRESSION_ERROR),
         }
         Ok(())
@@ -176,9 +176,9 @@ fn test_mixed_arithmetic() {
 
 #[test]
 fn test_invalid_expressions() {
-    assert_eq!(Err("除数不能为 0".into()), arithmetic("10 / 0"));
-    assert_eq!(Err("除数不能为 0".into()), arithmetic("100 / (50 - 50)"));
-    assert_eq!(Err("不支持运算 $ 符号".into()), arithmetic("10$ * 100"));
+    assert_eq!(Err("不能除以 0".into()), arithmetic("10 / 0"));
+    assert_eq!(Err("不能除以 0".into()), arithmetic("100 / (50 - 50)"));
+    assert_eq!(Err("未知符号 $".into()), arithmetic("10$ * 100"));
     assert_eq!(Err(EXPRESSION_ERROR.into()), arithmetic("10 * (20 - )"));
     assert_eq!(Err(EXPRESSION_ERROR.into()), arithmetic("(10 + 20"));
     assert_eq!(Err(EXPRESSION_ERROR.into()), arithmetic("10 + 20)"));
