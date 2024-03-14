@@ -53,7 +53,7 @@ impl Formatter {
         let mut is_string = false;
         let mut prev = ' ';
         for char in json.chars() {
-            if is_string == false && char.is_ascii_whitespace() {
+            if !is_string && char.is_ascii_whitespace() {
                 continue;
             }
             if prev != '\\' && char == '"' {
