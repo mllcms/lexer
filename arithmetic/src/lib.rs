@@ -84,9 +84,12 @@ pub fn arithmetic(expr: &str) -> Result<f64, String> {
             }
         }
 
-        // println!("symbol: {:?}", symbol);
-        // println!("number: {:?}", number);
-        // println!("buffer: {:?}\n", buffer);
+        #[cfg(feature = "debug")]
+        {
+            println!("symbol: {:?}", symbol);
+            println!("number: {:?}", number);
+            println!("buffer: {:?}\n", buffer);
+        }
 
         // 记录上一个字符用于后续匹配
         before = c;
@@ -96,6 +99,13 @@ pub fn arithmetic(expr: &str) -> Result<f64, String> {
         number.push(parse_f64(&buffer)?)
     }
     back_stack(&mut symbol, &mut number, None)?;
+
+    #[cfg(feature = "debug")]
+    {
+        println!("symbol: {:?}", symbol);
+        println!("number: {:?}", number);
+        println!(r#"buffer: """#);
+    }
 
     if number.len() == 1 {
         Ok(number.remove(0))
@@ -121,7 +131,7 @@ fn back_stack(symbol: &mut Vec<Symbol>, number: &mut Vec<f64>, meet: Option<Symb
 
 #[test]
 fn individually_tested() {
-    assert_eq!(Ok(90.0), arithmetic("60/2(1+2)"));
+    assert_eq!(Ok(100.0), arithmetic("60/2(1+2)+10"));
 }
 
 #[test]
